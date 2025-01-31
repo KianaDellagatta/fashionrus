@@ -3,7 +3,6 @@ const productId = 1535;
 fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
   .then((response) => response.json())
   .then((data) => {
-    let { discount, articletype, category, price, brandname } = data;
     productContainer.innerHTML = `
           <div class="product-image">
         <img src="https://kea-alt-del.dk/t7/images/webp/640/${productId}.webp" alt="Sahara Team India Fanwear Jersey" />
@@ -11,16 +10,16 @@ fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
 
       <!-- Middle Section: Product Details -->
       <div class="product-info">
-        <h2>Product Information</h2>
+        <h2>${data.brandname}</h2>
         <div class="info-grid">
           <p><strong>Model name</strong></p>
-          <p>Black Puma Lightweight Hat</p>
+          <p>${data.productdisplayname}</p>
 
           <p><strong>Color</strong></p>
-          <p>Black</p>
+          <p>${data.basecolour}</p>
 
           <p><strong>Price</strong></p>
-          <p>${price} kr</p>
+          <p>${data.price} kr</p>
         </div>
 
         <h3>Brand</h3>
@@ -29,7 +28,7 @@ fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
 
       <!-- Right Section: Purchase Box -->
       <aside class="purchase-box">
-        <h2>Black Puma Lightweight Hat</h2>
+        <h2>${data.productdisplayname}</h2>
         <p class="brand-info">${data.category} | ${data.articletype}</p>
         <p for="size">Choose a size</p>
         <select id="size">
