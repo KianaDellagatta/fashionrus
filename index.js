@@ -2,9 +2,9 @@ const categoryList = document.querySelector(".category_list_container");
 
 fetch(`https://kea-alt-del.dk/t7/api/categories`)
   .then((response) => response.json())
-  .then((data) => showList(data));
+  .then((data) => showCategory(data));
 
-function showList(data) {
+function showCategory(data) {
   const markup = data
     .map(
       (element) => `
@@ -12,5 +12,5 @@ function showList(data) {
     `
     )
     .join("");
-  categoryList.innerHTML = markup;
+  document.querySelector(".category_list_container").innerHTML = markup;
 }
