@@ -1,9 +1,15 @@
-const productContainer = document.querySelector(".product-container");
-const productId = 1535;
+// const queryString = window.location.search;
+// const urlParams = new URLSearchParams(queryString);
+// const productId = URLSearchParams.get("id");
+
+const productId = new URLSearchParams(window.location.search).get("id");
+
+console.log("productId", productId);
+
 fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
   .then((response) => response.json())
   .then((data) => {
-    productContainer.innerHTML = `
+    document.querySelector(".product-container").innerHTML = `
           <div class="product-image">
         <img src="https://kea-alt-del.dk/t7/images/webp/640/${productId}.webp" alt="Sahara Team India Fanwear Jersey" />
       </div>
