@@ -15,7 +15,7 @@ function showList(data) {
     .map(
       (product) => `<a href="product.html?id=${product.id}" class="product-link">
 <div class="product">
-<div class="sold-out ${product.soldout && "isSoldOut"}">${product.soldout}</div>
+<div class="sold-out ${product.soldout && "isSoldOut"}"></div>
 <img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="Product 2" />
 <div class="details">
 <h3>${product.productdisplayname}</h3>

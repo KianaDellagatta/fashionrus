@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: #8da6f2;
+  background-color: #c4e0fb;
 }
 .body2 {
   background-color: #ceb3f2;
@@ -37,15 +37,59 @@ main {
   font-style: normal;
 }
 
+.poppins-medium {
+  font-family: "Poppins", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* Header */
 header {
-  position: sticky;
+  padding: 20px;
+  /* Clean white background for the header */
+  width: 100%;
+  text-align: center; /* Center align the header content */
+}
+
+nav ul {
+  display: flex;
+  justify-content: center; /* Center align the navigation items */
+  gap: 15px;
+  margin-top: 15px;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+li {
+  border: solid 1px;
+  border-radius: 8px;
+  padding: 10px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-family: "Josefin Sans", serif;
+  font-weight: 500;
+  background-color: #d8f2bd;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ceb3f2; /* Bright blue hover effect */
 }
 
 h1 {
-  font-family: "Yeseva One", serif;
-  font-size: 3rem;
+  font-family: "Montserrat Alternates", serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 4.5rem;
   padding-bottom: 4rem;
-  color: #fffcf5;
+  color: rgb(254, 255, 245);
   padding: 1rem;
 }
 
