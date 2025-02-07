@@ -11,6 +11,8 @@ fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
   .then((data) => {
     document.querySelector(".product-container").innerHTML = `
           <div class="product-image">
+          <div class="sold-out-product ${data.soldout && "isSoldOut2"}">SOLD OUT</div>
+          <div class="discount ${data.discount && "isOnSale"} "><p>-${data.discount}%</p></div>
         <img src="https://kea-alt-del.dk/t7/images/webp/640/${productId}.webp" alt="Sahara Team India Fanwear Jersey" />
       </div>
 

@@ -118,7 +118,7 @@ p {
 .details {
   display: grid;
   grid-template-columns: subgrid; /* Aligns with parent grid */
-  padding: 0.9375rem; /* 15px */
+  padding: 6px; /* 15px */
   text-align: center;
 }
 
@@ -151,6 +151,7 @@ p {
   bottom: 10px; /* 10px */
   right: 10px; /* 10px */
   border-radius: 0.1875rem; /* 3px */
+  visibility: hidden;
 }
 
 /* ======= "Read More" Link ======= */
@@ -180,6 +181,7 @@ p {
   color: black;
   top: 0;
   left: 0;
+  visibility: hidden;
 }
 
 .sold-out::before {
@@ -259,12 +261,46 @@ p {
 }
 
 /* ===== Left Section: Product Image ===== */
+/* ===== Left Section: Product Image ===== */
+.product-image {
+  position: relative;
+  display: inline-block;
+}
+
 .product-image img {
   width: 100%;
   max-width: 400px;
   border: #333 solid 1px;
   border-radius: 0.5rem;
 }
+.sold-out-product {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: hsla(89, 67%, 85%, 0.674);
+  color: #000000;
+  font-size: 1.3rem;
+  font-family: "work sans", serif;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  z-index: 10;
+  visibility: hidden;
+}
+
+.isSoldOut2 {
+  visibility: visible;
+}
+
+/* Ensure the product image container is positioned correctly */
+.product-image {
+  position: relative;
+  display: inline-block;
+}
+
+/* Show overlay when the product is sold out */
 
 /* ===== Middle Section: Product Details ===== */
 .product-info {
@@ -308,6 +344,7 @@ select {
   border-radius: 5px;
 }
 
+/* ===== Disable "Add to Basket" when sold out ===== */
 .add-to-basket {
   background-color: #161616;
   color: white;
@@ -322,6 +359,11 @@ select {
   background-color: #333;
 }
 
+.add-to-basket:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
+
 /* ===== Responsive Design: Mobile Layout ===== */
 @media (max-width: 768px) {
   .product-container {
@@ -332,4 +374,12 @@ select {
   .product-image img {
     max-width: 100%;
   }
+}
+
+.isOnSale {
+  visibility: visible;
+}
+
+.isSoldOut {
+  visibility: visible;
 }
